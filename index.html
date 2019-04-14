@@ -13,7 +13,7 @@
     <div id="love" v-cloak>
         <div v-show="pageStatus === 'first'" class="page" style="background: url('./src/bg.jpg');background-size: cover;">
             
-            <l-pop title="第一章" alert-btn="start game" name="alertPop" :show-flag="popShowFlag" :alert-handler="alertHandler">
+            <l-pop title="Lucky Game" alert-btn="start game" name="alertPop" :show-flag="popShowFlag" :alert-handler="alertHandler">
                 <p>请输入你的游戏昵称,开始寻爱之旅！</p>
                 <div class="u-box">昵称：<input @input="unameInput" type="text" v-model="userName"></div>
                 <div class="u-tip">Tip：{{userTip}}</div>
