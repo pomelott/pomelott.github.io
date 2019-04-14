@@ -1,26 +1,4 @@
 
-window.onload = function () {
-    // var bgAudio = document.createElement("audio");
-    // bgAudio.src = 'https://music.163.com/song/media/outer/url?id=25942063.mp3';
-    // bgAudio.loop = "loop";
-    // bgAudio.play(); 
-    // bgAudio.addEventListener("canplay", function () {
-    //     bgAudio.play(); 
-    // })
-
-
-    // var bgAudio = document.querySelector(".bg-audio");
-    // console.log(bgAudio)
-    // bgAudio.volume = "0.5"
-    // bgAudio.addEventListener("canplaythrough", function () {
-    //     bgAudio.play(); 
-    // })
-    // document.body.onclick = function (){
-    //     bgAudio.play(); 
-    // }
-   
-}
-
 
 Vue.component("l-pop", {
     template: '<div  v-if="showFlag" class="love-pop flex v-center h-center" :class="[name]">\
