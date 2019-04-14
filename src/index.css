@@ -1,0 +1,132 @@
+[v-cloak]{
+    display: none;
+}
+*{
+    padding: 0;
+    margin: 0;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+body,html{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.bg-audio{
+    position: absolute;
+    opacity: 0;
+}
+#love{
+    width: 100%;
+    height: 100%;
+}
+.flex{
+    display:-webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+.v-center{
+    -ms-flex-align:center;
+        align-items:center;
+    box-align:center;
+    -moz-box-align:center;
+    -webkit-box-align:center;
+}
+.v-center{
+    -webkit-box-pack:center;
+        -ms-flex-pack:center;
+            justify-content:center;
+    -moz-box-pack:center;
+    -webkit--moz-box-pack:center;
+    box-pack:center;
+}
+#love .love-pop{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.7);
+}
+#love .love-pop-inter{
+    font-size: 14px;
+    color: #666;
+    width: 350px;
+    padding: 20px 40px;
+    border-radius: 4px;
+    background: #fff;
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    transition: all ease-in-out 0.3s;
+}
+#love .love-pop-btn{
+    text-align: right;
+    margin-top: 50px;
+}
+#love .pop-show{
+    transform: scale(1)
+}
+#love .l-btn{
+    display: inline-block;
+    height: 30px;
+    padding: 0 15px;
+    line-height: 30px;
+    border-radius: 4px;
+    font-size: 14px;
+    text-align: center;
+    cursor: pointer;
+}
+#love .u-box{
+    margin: 10px 0;
+}
+#love .u-box input{
+    border: 1px solid #ededed;
+    display: inline-block;
+    width: 80px;
+    height: 30px;
+}
+#love .alert-btn, .love-pop-confirm{
+    background: #f69c9f;
+    color: #fff;
+    border: 1px solid #f69c9f;
+}
+#love .love-pop-cancel{
+    background: #fff;
+    color: #f69c9f;
+    border: 1px solid #f69c9f;
+}
+#love .love-pop-title{
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+}
+#love .u-tip{
+    font-size: 12px;
+    color: #f69c9f;
+}
+.page{
+    width: 100%;
+    heigh: 100%;
+}
+.final{
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    background: #000;
+
+}
+.final canvas {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+}
+.final-title{
+    position: absolute;
+    width: 100%;
+    font-size: 60px;
+    color: #f69c9f;
+    text-align: center;
+    top: 10px;
+}
