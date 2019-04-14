@@ -6,21 +6,108 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>foreverLove</title>
     <link rel="stylesheet" href="./src/index.css">
-    <link rel="shortcut icon" href="./src/icon.jpg" type="image/x-icon"/>
+    <link rel="shortcut icon" href="./src/icon.png" type="image/x-icon"/>
 </head>
 <body>
     <audio class="bg-audio" loop preload="auto" src="https://music.163.com/song/media/outer/url?id=25942063.mp3" volume="0.5" type="audio/mpeg" controls></audio>
     <div id="love" v-cloak>
-        <div class="page">
-            <canvas id="firstPage"></canvas>
+        <div v-show="pageStatus === 'first'" class="page" style="background: url('./src/bg.jpg');background-size: cover;">
+            
             <l-pop title="第一章" alert-btn="start game" name="alertPop" :show-flag="popShowFlag" :alert-handler="alertHandler">
                 <p>请输入你的游戏昵称,开始寻爱之旅！</p>
                 <div class="u-box">昵称：<input @input="unameInput" type="text" v-model="userName"></div>
                 <div class="u-tip">Tip：{{userTip}}</div>
             </l-pop>
+            <div v-if="secFlag" class="note-box flex v-center h-center">
+                    <p class="note">
+                        宝贝儿你好：<br>
+                        <br>
+                        <br>
+                        不管是叮当璇也好，二妮也罢，<br>
+                        在我这里都是对你的爱称。<br>
+                        心里一直都想通过这种方式为你做点什么，<br>
+                        无奈工作太忙，生活琐事太多。<br>
+                        你之前就曾经说过害怕失去我，<br>
+                        昨天说又有种预感可能会失去我，<br>
+                        还出现了心慌的情况。<br>
+                        听到这里，我很难过<br>
+                        也对自己很失望。<br>
+                        联想起来，<br>
+                        之前晚上和你吵架、害你做噩梦，<br>
+                        应该也是与害怕失去我有关。<br>
+                        因此，我总是想做点什么来弥补，<br>
+                        想让你踏踏实实睡觉，开开心心工作，<br>
+                        想让你不再害怕失去我，<br>
+                        想让你重新获得安全感。<br>
+                        所以，这个程序就诞生了。<br>
+                        我这个人脾气有时候不太好，<br>
+                        你能包容我，<br>
+                        我很珍惜，<br>
+                        非常珍惜。<br>
+                        在遇到你之前，我就对自己说过，<br>
+                        要让自己的媳妇过上最幸福的生活。<br>
+                        在遇到你之后，<br>
+                        我更加坚定自己的想法，<br>
+                        更加努力的学习，工作。<br>
+                        请原谅程序的简单，<br>
+                        请原谅安全感的迟到。<br>
+                        但内心一直爱着你，<br>
+                        一直呵护着你，<br>
+                        自始至终，<br>
+                        都未改变。<br>
+                        <br>
+                        <br>
+                        这段时间，<br>
+                        你都在忙答辩的事情，<br>
+                        听到你们组长的为人之后，<br>
+                        我很想替你揍她，<br>
+                        但考虑到不能影响你在公司的工作，<br>
+                        也考虑到不能影响你跳槽后的工作，<br>
+                        我还是克制住了，<br>
+                        也没让你采取其他越界的做法，<br>
+                        我能做的，<br>
+                        就是想让你明白我可以依靠，<br>
+                        不需要跟她一般见识，<br>
+                        也不需要害怕任何人。<br>
+                        <br>
+                        清明节你来北京的那几天，<br>
+                        是我人生中最开心的假期，<br>
+                        可能是之前的人生太过匆忙，<br>
+                        对自己的要求太高，<br>
+                        时间大多花在了学习与奋斗中，<br>
+                        在遇到你之后，<br>
+                        才感觉到了发自内心的快乐，<br>
+                        在遇到你之后，<br>
+                        就忍不住想要保护你，<br>
+                        在遇到你之后，<br>
+                        我也变得更加成熟。<br>
+                        可能你不信，<br>
+                        在写到这里的时候，<br>
+                        我的眼中已经全部是泪水。<br>
+                        我为自己的不容易而感动，<br>
+                        为遇到你的不容易而感动，<br>
+                        更为爱而感动，<br>
+                        我感到很幸福，<br>
+                        也想要把这种幸福延续下去。<br>
+                        <br>
+                        <br>
+                        宝贝儿，<br>
+                        工作上，平平稳稳就好，不要被外界激怒，<br>
+                        生气最终还是伤自己的身体。<br>
+                        生活上，<br>
+                        我想和你吃喜欢吃的，<br>
+                        玩喜欢玩的，<br>
+                        去想去的地方。<br>
+                        我们还有很多事情没有做，<br>
+                        所以一定要照顾好自己的身体。<br>
+                        故事很长，<br>
+                        还想要继续听下去吗？<br>
+                        <span @click="goFinal" class="l-btn love-pop-btn alert-btn">继续</span>
+                    </p>
+            </div>
         </div>
-        <div v-show="finalFlag" class="page final">
-            <div class="final-title">(*^▽^*)我们结婚吧(*^▽^*)</div>
+        <div v-show="pageStatus === 'final'" class="page final">
+            <div class="final-title">(*^▽^*){{userName}},我们结婚吧(*^▽^*)</div>
             <canvas id="pinkboard"></canvas>
         </div>
     </div>
