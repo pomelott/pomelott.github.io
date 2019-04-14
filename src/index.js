@@ -1,4 +1,4 @@
-console.log("dailfdi")
+console.log("dailiiiiiii")
 window.onload = function () {
     // var bgAudio = document.createElement("audio");
     // bgAudio.src = 'https://music.163.com/song/media/outer/url?id=25942063.mp3';
@@ -18,6 +18,7 @@ window.onload = function () {
     // document.body.onclick = function (){
     //     bgAudio.play(); 
     // }
+   
 }
 
 
@@ -117,6 +118,14 @@ var love = new Vue({
         },
         unameInput () {
             this.firstFlag = false;
+        },
+        getRandomPos () {
+          var w = document.body.clientWidth;
+          var h = document.body.clientHeight;
+          return {
+            x: Math.random() * Math.floor(w),
+            y: Math.random() * Math.floor(h)
+          }
         }
     },
     data: {
@@ -126,7 +135,8 @@ var love = new Vue({
         firstFlag: true,
         canPlay: false,
         hideEvent: [],
-        finalFlag: false
+        finalFlag: false,
+        firstBgTimer: null
     },
     computed:{
         userTip () {
@@ -148,7 +158,7 @@ var love = new Vue({
         }
     },
     mounted () {
-        var self = this;
+        var _this = this;
         bgAudio = document.querySelector(".bg-audio");
         bgAudio.addEventListener("error", function () {
             console.log("err");
@@ -160,19 +170,31 @@ var love = new Vue({
         this.checkBrowser();
         console.log("mounted")
         setTimeout(function (){
-            self.popShowFlag = true;
+          _this.popShowFlag = true;
         }, 500)
+
+
+        var bgImg = new Image();
+        bgImg.src = "./src/dingdang.jpg";
+        bgImg.onload = function () {
+          var firstPage = document.querySelector("#firstPage");
+          console.log(bgImg.width, bgImg.height)
+          firstPage.width = document.body.clientWidth;
+          firstPage.height = document.body.clientHeight;
+          var bgCtx = firstPage.getContext("2d");
+          
+          // _this.firstBgTimer = setInterval(function () {
+          //   var vPos = _this.getRandomPos();
+          //   console.log(vPos.x, vPos.y)
+          //   bgCtx.drawImage(bgImg, vPos.x, vPos.y, 300,500);
+          // }, 3000)
+        }
     }
 })
 
 
-var firstPage = document.querySelector("#firstPage");
-console.log(firstPage)
-var bgCtx = firstPage.getContext("2d");
-var bgImg = new Image("./src/dingdang.jpg");
-bgImg.onload = function () {
-    bgCtx.drawImage(bgImg, 50, 100, 300,500);
-}
+
+
 
 
 

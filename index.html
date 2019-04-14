@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>foreverLove</title>
     <link rel="stylesheet" href="./src/index.css">
+    <link rel="shortcut icon" href="./src/icon.jpg" type="image/x-icon"/>
 </head>
 <body>
     <audio class="bg-audio" loop preload="auto" src="https://music.163.com/song/media/outer/url?id=25942063.mp3" volume="0.5" type="audio/mpeg" controls></audio>
@@ -18,7 +19,7 @@
                 <div class="u-tip">Tip：{{userTip}}</div>
             </l-pop>
         </div>
-        <div v-if="finalFlag" class="page final">
+        <div v-show="finalFlag" class="page final">
             <div class="final-title">(*^▽^*)我们结婚吧(*^▽^*)</div>
             <canvas id="pinkboard"></canvas>
         </div>
