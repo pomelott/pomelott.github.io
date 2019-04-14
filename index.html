@@ -1,3 +1,41 @@
-<h1>牙疼哥哥的个人博客</h1>
-<h2>test</h2>
-<script src="./src/index.js"></script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>foreverLove</title>
+    <link rel="stylesheet" href="./src/index.css">
+</head>
+<body>
+    <audio class="bg-audio" loop preload="auto" src="https://music.163.com/song/media/outer/url?id=25942063.mp3" volume="0.5" type="audio/mpeg" controls></audio>
+    <div id="love" v-cloak>
+        <div class="page">
+            <canvas id="firstPage"></canvas>
+            <l-pop title="第一章" alert-btn="start game" name="alertPop" :show-flag="popShowFlag" :alert-handler="alertHandler">
+                <p>请输入你的游戏昵称,开始寻爱之旅！</p>
+                <div class="u-box">昵称：<input @input="unameInput" type="text" v-model="userName"></div>
+                <div class="u-tip">Tip：{{userTip}}</div>
+            </l-pop>
+        </div>
+        <div v-if="finalFlag" class="page final">
+            <div class="final-title">(*^▽^*)我们结婚吧(*^▽^*)</div>
+            <canvas id="pinkboard"></canvas>
+        </div>
+    </div>
+    <!-- <div class="love-pop flex v-center h-center">
+        <div class="love-opo-inter">
+            <div class="love-pop-msg">
+                知道了吗
+            </div>
+            <div class="love-pop-btn">
+                <div class="alert-btn l-btn">知道了</div>
+                <div class="love-pop-cancel l-btn">取消</div>
+                <div class="love-pop-confirm l-btn">确认</div>
+            </div>
+        </div>
+    </div> -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+    <script src="./src/index.js"></script>
+</body>
+</html>
